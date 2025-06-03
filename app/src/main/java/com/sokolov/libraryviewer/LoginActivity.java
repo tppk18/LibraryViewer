@@ -11,23 +11,31 @@ import java.sql.SQLException;
 
 public class LoginActivity extends AppCompatActivity {
     EditText libraryCard, recordNumber;
-    Button loginBtn, toRegisterBtn;
+    Button loginBtn;
     TextView resultText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        UserDataManager.loadUserData(this);
+        if (UserDataManager.getUser() != null) {
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
 
         libraryCard = findViewById(R.id.libraryCard);
         recordNumber = findViewById(R.id.recordNumber);
         loginBtn = findViewById(R.id.loginButton);
-        toRegisterBtn = findViewById(R.id.toRegister);
         resultText = findViewById(R.id.resultLogin);
-
         loginBtn.setOnClickListener(v -> login());
-        toRegisterBtn.setOnClickListener(v -> {
-            startActivity(new Intent(this, RegisterActivity.class));
+
+        Button becomeReaderButton = findViewById(R.id.becomeReaderButton);
+        becomeReaderButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, BecomeActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -51,9 +59,11 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             if (rs.next()) {
                                 resultText.setText("Успешный вход");
-                                User.libraryCard = libraryCard.getText().toString();
-                                User.recordNumber = recordNumber.getText().toString();
+                                UserData user = new UserData(libraryCard.getText().toString(), recordNumber.getText().toString());
+                                UserDataManager.saveUserData(this, user);
                                 startActivity(new Intent(this, HomeActivity.class));
+                                finish();
+                                return;
                             } else {
                                 resultText.setText("Неверные данные");
                             }

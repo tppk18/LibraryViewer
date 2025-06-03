@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+	app:strokeWidth="2dp"
+    app:strokeColor="#96C22B"
+	app:cardBackgroundColor="#d9d9d9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Название книги"
+            android:textSize="16sp"
+            android:textColor="#6a2f85" />
+
+        <TextView
+            android:id="@+id/issueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выдана: 01.01.2025"
+            android:textSize="14sp"
+			android:textStyle="bold"
+            android:textColor="#6a2f85"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/planDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вернуть до: 10.01.2025"
+            android:textSize="14sp"
+			android:textStyle="bold"
+            android:textColor="#6a2f85"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

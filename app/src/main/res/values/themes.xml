@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.LibraryViewer" parent="Base.Theme.LibraryViewer" />
+    <style name="Theme.LibraryViewer" parent="Base.Theme.LibraryViewer">
+		<item name="colorControlActivated">#e95229</item>
+		<item name="colorPrimary">#6a2f85</item>
+	</style>
 </resources>

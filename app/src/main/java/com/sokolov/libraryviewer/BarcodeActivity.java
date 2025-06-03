@@ -2,7 +2,6 @@ package com.sokolov.libraryviewer;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ public class BarcodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_barcode);
         barcodeView = findViewById(R.id.barcodeView);
         try {
-            String content = String.valueOf(User.libraryCard);
+            String content = String.valueOf(UserDataManager.getUser().libraryCard);
             if (!content.isEmpty()) {
                 BarcodeEncoder encoder = new BarcodeEncoder();
                 Bitmap bitmap = encoder.encodeBitmap(
@@ -38,6 +37,6 @@ public class BarcodeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         titleBarcode = findViewById(R.id.titleBarcode);
-        titleBarcode.setText(String.valueOf(User.libraryCard));
+        titleBarcode.setText(String.valueOf(UserDataManager.getUser().libraryCard));
     }
 }

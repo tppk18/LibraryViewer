@@ -1,54 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#d9d9d9">
+
+    <ImageView
+        android:id="@+id/logoView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/topBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ssga_logo" />
 
     <TextView
-        android:text="Вход"
+        android:text="ВХОД В СИСТЕМУ"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
+		android:textColor="#464646"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/libraryCard"
         android:hint="Номер читательского билета"
         android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="300dp"
+		android:textColor="#464646"
+		android:textColorHint="#464646"
+		app:backgroundTint="#464646"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"/>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/recordNumber"
         android:hint="Номер зачётной книжки"
         android:inputType="text"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+		android:textColor="#464646"
+		android:textColorHint="#464646"
+		app:backgroundTint="#464646"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
-        android:text="Войти"
-        android:layout_width="match_parent"
+        android:layout_width="280dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"/>
+        android:layout_below="@id/barcodeButton"
+        android:layout_marginTop="16dp"
+        android:text="ВОЙТИ"
+        android:textColor="#D9D9D9"
+        app:cornerRadius="12dp"
+        app:backgroundTint="#6A2F85"
+    />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/becomeReaderButton"
+        android:layout_width="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/barcodeButton"
+        android:layout_marginTop="16dp"
+        android:text="СТАТЬ ЧИТАТЕЛЕМ"
+        android:textColor="#D9D9D9"
+        app:cornerRadius="12dp"
+        app:backgroundTint="#e95229"
+    />
 
     <TextView
         android:id="@+id/resultLogin"
         android:text=""
-        android:textColor="#FF0000"
+		android:textColor="#464646"
         android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/toRegister"
-        android:text="Регистрация"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"/>
 </LinearLayout>

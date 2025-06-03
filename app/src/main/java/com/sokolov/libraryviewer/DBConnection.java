@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private static final String url = "jdbc:mysql://89.111.153.23:3306/irbis?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    private static final String url = "jdbc:mysql://lib.sgugit.ru:3306/irbis?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String user = "reader";
     private static final String password = "BmOAPnCK(wkgrmgK";
     public static Connection getConnection() {
@@ -19,7 +19,6 @@ public class DBConnection {
         }
         catch (SQLException e) {
             Log.e("DBConnection", "Ошибка подключения к базе", e);
-            throw new RuntimeException(e);
         }
         return conn;
     }

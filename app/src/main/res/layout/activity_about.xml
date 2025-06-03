@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d9d9d9"
+	android:gravity="center_horizontal"
+    android:padding="16dp">
+	
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textAlignment="center"
+        android:text="НАУЧНО-ТЕХНИЧЕСКАЯ\nБИБЛИОТЕКА СГУГиТ"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#6a2f85"
+		android:layout_marginTop="16dp"/>
+		
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textAlignment="center"
+        android:text="630108, Г.НОВОСИБИРСК,\nУЛ.ПЛАХОТНОГО, 10"
+        android:textSize="24sp"
+        android:textColor="#464646"
+		android:layout_marginTop="16dp"/>
+		
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textAlignment="center"
+        android:text="ГЛАВНЫЙ КОРПУС\nАУДИТОРИЯ 113"
+        android:textSize="24sp"
+        android:textColor="#6a2f85"
+		android:layout_marginTop="16dp"/>
+		
+	<ImageView
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/topBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/location" />
+		
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+7 (383) 343-27-01\ne-mail:library.1@ssga.ru"
+        android:textSize="24sp"
+		android:textAlignment="center"
+        android:textColor="#464646"
+		android:layout_marginTop="32dp"/>
+		
+	<LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+		android:layout_marginTop="16dp"
+        android:padding="8dp">
+			
+		<ImageButton
+            android:id="@+id/vkIcon"
+			android:layout_width="55dp"
+			android:layout_height="55dp"
+			android:layout_weight="1"
+			android:textAlignment="center"
+			android:scaleType="fitCenter"
+            android:src="@drawable/vk_icon"
+            android:background="@android:color/transparent"
+            android:contentDescription="VK"/>
+			
+		<ImageButton
+            android:id="@+id/telegramIcon"
+            android:layout_width="55dp"
+			android:layout_height="55dp"
+			android:layout_weight="1"
+			android:scaleType="fitCenter"
+            android:src="@drawable/telegram_icon"
+            android:background="@android:color/transparent"
+            android:contentDescription="VK"/>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
