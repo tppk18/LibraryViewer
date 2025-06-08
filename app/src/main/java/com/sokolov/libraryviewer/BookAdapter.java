@@ -47,7 +47,6 @@ public class BookAdapter extends ArrayAdapter<Book> {
 
         String label, dateStr;
         SpannableString spannable;
-        //issueDate.setText("Выдан: " + df.format(book.getIssueDate()));
 
         label = "Дата выдачи: ";
         dateStr = df.format(book.getIssueDate());
@@ -72,9 +71,6 @@ public class BookAdapter extends ArrayAdapter<Book> {
                     android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             );
             planDate.setText(spannable);
-//            planDate.setText("Требовалось вернуть до: " + df.format(book.getPlanDate()));
-//            planDate.setTextColor(Color.parseColor("#e95229"));
-//            issueDate.setTextColor(Color.parseColor("#e95229"));
             MaterialCardView cardView = (MaterialCardView) convertView;
             cardView.setStrokeColor(Color.parseColor("#e95229"));
         } else {
@@ -96,9 +92,9 @@ public class BookAdapter extends ArrayAdapter<Book> {
                     android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             );
             planDate.setText(spannable);
+            MaterialCardView cardView = (MaterialCardView) convertView;
+            cardView.setStrokeColor(Color.parseColor("#96C22B"));
         }
-
-
         return convertView;
     }
 }
